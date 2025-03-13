@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            min-height: 100vh;
+        }
+        #gameCanvas {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .game-button {
+            transition: all 0.3s ease;
+        }
+        .game-button:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center p-4">
+    <div class="text-center mb-8">
+        <h1 class="text-4xl text-yellow-300 mb-4">Duck Game</h1>
+        <p class="text-white mb-4">Use Space to make the duck jump!</p>
+        <button id="startButton" class="game-button bg-green-500 text-white px-8 py-4 rounded-lg text-xl shadow-lg hover:bg-green-600">
+            Start Game <i class="fas fa-play ml-2"></i>
+        </button>
+        <p id="score" class="text-3xl text-white mt-4">Score: 0</p>
+    </div>
+    
+    <canvas id="gameCanvas" width="800" height="400" class="hidden"></canvas>
+    
+    <div id="gameOver" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-90 p-8 rounded-xl text-center">
+        <h2 class="text-3xl text-red-500 mb-4">Game Over!</h2>
+        <p class="text-white mb-4">Final Score: <span id="finalScore">0</span></p>
+        <button id="restartButton" class="game-button bg-blue-500 text-white px-6 py-3 rounded-lg text-lg shadow-lg hover:bg-blue-600">
+            Play Again <i class="fas fa-redo ml-2"></i>
+        </button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
